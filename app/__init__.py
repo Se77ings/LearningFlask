@@ -12,3 +12,4 @@ manager = Manager(app) #responsavel pelos comandos para inciaizar a aplicação,
 manager.add_command('db', MigrateCommand) #adicionamos o comando DB,e o MigrateCommand passa os comandos necessarios
 
 from app.controllers import default
+from app.models import tables

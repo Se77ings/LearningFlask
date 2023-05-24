@@ -9,7 +9,7 @@ class User(db.Model):
     name= db.Column(db.String)# ....
     email = db.Column(db.String, unique=True)# ....
 
-    def __init__(self, username, password, name, email)#quando for chamado esse comando, aqui estão os argumentos de inicialização
+    def __init__(self, username, password, name, email):#quando for chamado esse comando, aqui estão os argumentos de inicialização
         self.username = username#init self.username = username (parâmetro)
         self.password = password# ...
         self.name = name #...
@@ -26,7 +26,7 @@ class Post(db.Model):
     content = db.Column(db.Text)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
-    user = db.relationship('User', foreign_keys('user_id')) #join
+    user = db.relationship('User', db.ForeignKey('user_id')) #join
 
     def __init__(self,content, user_id):
         self.content = content
